@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS task_estimation_system;
 USE task_estimation_system;
 
---stores users accounts
+-- stores users accounts
 
 CREATE TABLE users (
 user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -11,7 +11,7 @@ password VARCHAR(255) NOT NULL,
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
---stores task information and time estimation
+-- stores task information and time estimation
 
 CREATE TABLE tasks (
 task_id INT AUTO_INCREMENT PRIMARY KEY,

@@ -43,7 +43,7 @@ app.post("/addTask", (req, res) => {
 
         accuracy = ((expected / actual) * 100).toFixed(2);
 
-        // Console log (for demo)
+        // console log use (for demo)
 
         
         console.log("Task Name:", task_name);

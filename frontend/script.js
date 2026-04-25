@@ -21,5 +21,9 @@ form.addEventListener("submit", async (e) => {
 
     const data = await response.json();
 
-    document.getElementById("responseMsg").innerText = data.message;
+    document.getElementById("responseMsg").innerText =
+    `Task added successfully 
+     Type: ${data.estimation_type} 
+     Accuracy: ${data.accuracy}`;;
+
 });

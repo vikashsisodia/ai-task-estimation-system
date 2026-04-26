@@ -27,9 +27,28 @@ app.post("/addTask", async (req, res) => {
             });
         }
 
-        // Converting to numbers
         const expected = parseFloat(expected_time);
         const actual = parseFloat(actual_time);
+
+    // Validation
+
+        if (isNaN(expected) || isNaN(actual)) {
+    return res.status(400).json({
+        message: "Expected and Actual time must be numbers"
+    });
+}
+
+        if (expected <= 0 || actual <= 0) {
+    return res.status(400).json({
+        message: "Time must be positive values"
+    });
+}
+
+        if (actual === 0) {
+    return res.status(400).json({
+        message: "Actual time cannot be zero"
+    });
+}
 
         // AI Logic (basic)
 
@@ -79,10 +98,10 @@ app.post("/addTask", async (req, res) => {
 
         // Response
         res.json({
-            message: "Task added successfully",
-            estimation_type,
-            accuracy: accuracy + "%"
-        });
+        message: "Task added successfully",
+        estimation_type: estimation_type,
+        accuracy: accuracy + "%"
+});
 
     } catch (error) {
         console.error(error);
